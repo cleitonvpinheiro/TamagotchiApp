@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
-import { initDB } from './src/services/database'; // Inicialização do banco de dados
-import AppNavigator from './src/navigation/AppNavigator'; 
-import PetList from './src/components/PetList';
+import { View } from 'react-native';
+import { initDB } from './src/services/database';
+import AppNavigator from './src/navigation/AppNavigator';
 
 const App: React.FC = () => {
   useEffect(() => {
-    initDB(); // Inicializa o banco de dados
+    initDB();
   }, []);
 
   return (
-    <div>
-      <PetList />
+    <View style={{ flex: 1 }}>
       <AppNavigator />
-    </div>
+    </View>
   );
 };
 
